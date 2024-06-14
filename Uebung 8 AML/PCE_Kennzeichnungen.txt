@@ -1,0 +1,43 @@
+PCE-Kennzeichnungen:
+
+	Erster Buchstabe								Weitere Buchstaben
+A 	Analyse										Alarm, Meldung			
+B 	Flammenüberwachung								Beschränkung, Eingrenzung
+C 	(a)										Regelung
+D 	Dichte										Differenz
+E 	Elektrische Spannung								N.A.
+F 	Durchfluss									Verhältnis
+G 	Abstand, Länge, Stellung							N.A.
+H 	Handeingabe, Handeingriff ( hiermit sind alle Eingriffe 			oberer Grenzwer, an, offen
+	und Eingaben durch den Menschen zu kennzeichnen)				
+I 	Elektrischer Strom								Analoganzeige
+J 	Elektrische Leistung								N.A.
+K 	Zeitbasierte Funktionen								N.A.
+L 	Füllstand									unterer Grenzwert, aus, geschlossen
+M 	Feuchte										N.A.
+N 	Motor (c)									N.A.
+O 	(a)										Örtliche oder PCS-Statusanzeige von Binärsignalen
+P 	Druck										N.A.
+Q 	Menge oder Anzahl								Integral oder Summe
+R 	Strahlungsgrößen								Aufgezeichneter Wert
+S 	Geschwindigkeit, Drehzahl, Frequenz						Binäre Steuerungsfunktion oder Schaltfunktion (nicht sicherheitsrelevant)
+T 	Temperatur									N.A.
+U 	N.A. (siehe 6.3.10)								N.A.
+V 	Schwingung									N.A.
+W 	Gewicht, Masse, Kraft								N.A.
+X 	(b)										(b)
+Y 	Stellventil (c)									Rechenfunktion
+Z 	(a)										Binäre Steuerungsfunktion oder Schaltfunktion(sicherheitsrelevant)
+
+
+
+(a) Die Verwendung dieses Buchstabens sollte vom Anwender definiert werden
+(b) Der nicht klassifizierte Buchstabe X ist dazu vorgesehen, nicht aufgelistete Bedeutungen abzudecken, die
+nur einmal oder begrenzt genutzt werden. Wenn er benutzt wird, darf er eine beliebige Anzhal von
+Bedeutungen als PCE-Kategorie und eine beliebige Anzahl von Bedeutungen als PCE-Funktion
+annehmen.
+(c) Der Gebrauch von N für motorgesteuerte Stellorgane und Y für Stellventile basiert auf verschiedenen
+PCE-Tätigkeiten und Instandhaltungsanforderungen an beide Arten von Stellorganen. Außerdem ist
+angesichts des erhöhten Instandhaltungsbedarfs in der Anlage die sofortige Erkennung für die
+Übertragung von Daten und zugehöriger Attribute des Stellorganes zum Instandhaltungssystem
+notwendig.
