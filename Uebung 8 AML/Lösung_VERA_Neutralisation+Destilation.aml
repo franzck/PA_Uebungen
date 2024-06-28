@@ -1,0 +1,1255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CAEXFile SchemaVersion="3.0" FileName="VERA_Neutralisation+Destilation.aml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.dke.de/CAEX" xsi:schemaLocation="http://www.dke.de/CAEX CAEX_ClassModel_V.3.0.xsd">
+  <SuperiorStandardVersion>AutomationML 2.1</SuperiorStandardVersion>
+  <SourceDocumentInformation OriginName="AutomationML Editor" OriginID="916578CA-FE0D-474E-A4FC-9E1719892369" OriginVersion="6.2.5.0" LastWritingDateTime="2024-06-28T10:46:54.6107803+02:00" OriginProjectID="unspecified" OriginProjectTitle="unspecified" OriginRelease="6.2.5.0" OriginVendor="AutomationML e.V." OriginVendorURL="www.AutomationML.org" />
+  <InstanceHierarchy Name="InstanceHierarchy">
+    <Version>1.0.0</Version>
+    <InternalElement Name="DruckluftVersorgungVERA" ID="f8d81ed4-86d8-4581-8362-8cedf20fdb32" RefBaseSystemUnitPath="VERA_Komponenten/DruckluftSystem">
+      <ExternalInterface Name="Druckluft_Eingang" ID="b75d82e1-8f79-4461-b9f5-4148b522b550" />
+      <ExternalInterface Name="DL_OUT" ID="b01a7262-d9b3-4c22-ba77-e02be4aad8ed" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_OUT" />
+      <InternalLink RefPartnerSideA="b01a7262-d9b3-4c22-ba77-e02be4aad8ed" RefPartnerSideB="4dc275c4-ba5a-467a-9968-47c38860c30d" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="b01a7262-d9b3-4c22-ba77-e02be4aad8ed" RefPartnerSideB="53c1e215-bde4-444a-81ad-34a11195d358" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="b01a7262-d9b3-4c22-ba77-e02be4aad8ed" RefPartnerSideB="3aa99db1-9db1-4346-bf84-242b1ae1a5ea" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="b01a7262-d9b3-4c22-ba77-e02be4aad8ed" RefPartnerSideB="1bb47719-6ceb-4108-8421-64b50b2c88ad" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="b01a7262-d9b3-4c22-ba77-e02be4aad8ed" RefPartnerSideB="40c2f1bb-2586-44b6-9991-c70a3e997fde" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="b01a7262-d9b3-4c22-ba77-e02be4aad8ed" RefPartnerSideB="acee447c-e6c8-4bff-bdb4-8ee0656bc052" Name="InternalLink" />
+      <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Produkt_Quelle" />
+    </InternalElement>
+    <InternalElement Name="T2" ID="0e0a1189-f94d-483a-b77d-b6b576ca8bc4" RefBaseSystemUnitPath="VERA_Komponenten/QFC_Vorlagenbehälter">
+      <Attribute Name="LevelT2" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Füllstand">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="6c7a0794-8044-4397-851b-0a01b266890a" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="9b87380d-f9d7-468c-9aeb-5887230878b4" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="VEGA EL" ID="fb186436-f2cd-4196-8e7d-cddfe440d7c7" RefBaseSystemUnitPath="VERA_Sensoren/VEGA EL">
+        <ExternalInterface Name="SK_OUT" ID="b3f2662a-fa80-48d7-a546-8e6870c2d66d" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+      </InternalElement>
+      <InternalElement Name="Wenglor TO" ID="159db672-d858-46bf-8df1-765fa9353c03" RefBaseSystemUnitPath="VERA_Sensoren/Wenglor TO">
+        <ExternalInterface Name="SD_OUT" ID="f64a5f12-015d-4cc3-bed4-763b07f8b72f" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Diskreter Grenzstandssensor" />
+      </InternalElement>
+      <InternalElement Name="Säurezulauf" ID="23198927-0352-4252-a8bc-af17f4b1f426" RefBaseSystemUnitPath="VERA_Komponenten/Produkt_Quelle">
+        <ExternalInterface Name="Product_OUT" ID="dfa5f783-52df-410a-90d9-edecc5e8e8d5" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Produkt_Quelle" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="9b87380d-f9d7-468c-9aeb-5887230878b4" RefPartnerSideB="f069f8c1-7f1c-4367-943a-cf8d35b686c0" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="dfa5f783-52df-410a-90d9-edecc5e8e8d5" RefPartnerSideB="6c7a0794-8044-4397-851b-0a01b266890a" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="9b87380d-f9d7-468c-9aeb-5887230878b4" RefPartnerSideB="c2a49361-9f03-4a76-83f8-dc7446c6fc87" Name="InternalLink" />
+      <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Tank/Vorlagenbehälter" />
+    </InternalElement>
+    <InternalElement Name="Rohr_T2_TB" ID="94128217-93d0-45c9-9fa1-d6794bf05dda" RefBaseSystemUnitPath="VERA_Komponenten/Rohr">
+      <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="f069f8c1-7f1c-4367-943a-cf8d35b686c0" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="3391e9a3-08d5-4ab5-bdd2-516806a6100d" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="AD_V_T2_TB" ID="01fcc13c-82bb-46ae-a499-440a70394e2e">
+        <Attribute Name="Öffnung" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Diskret">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <ExternalInterface Name="DL_IN" ID="4dc275c4-ba5a-467a-9968-47c38860c30d" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_IN" />
+        <ExternalInterface Name="Product_IN" ID="8065c104-f4fe-41d2-b621-9ae05a85e829" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Product_OUT" ID="2278a935-376c-4c55-9504-5ef6d473d6c3" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <ExternalInterface Name="SD_IN" ID="0da773b6-674d-4dcc-8a8a-ee4ea751f02f" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+        <InternalElement Name="YXC111" ID="4636758d-3f9d-46e2-aa53-d16f871c1bef">
+          <ExternalInterface Name="YXC111_Ventilsteuerung" ID="40b8c87e-2433-47f2-bfb8-09bee72a3813" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_OUT" />
+          <ExternalInterface Name="YXC111_SK_IN" ID="524d910f-28e1-4c3a-8c43-4989f70f4202" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_IN" />
+          <ExternalInterface Name="YXC111_Sicherheitsabschaltung" ID="cb6e3bbe-e02e-4f07-a1f2-ab40fe8a2e10" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/SPS_Kontroll-Logik" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="40b8c87e-2433-47f2-bfb8-09bee72a3813" RefPartnerSideB="0da773b6-674d-4dcc-8a8a-ee4ea751f02f" Name="Link" />
+        <InternalLink RefPartnerSideA="2278a935-376c-4c55-9504-5ef6d473d6c3" RefPartnerSideB="40b728c9-dba4-4fa5-a502-717ea4c34678" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Ventil/Ventil (Diskret)">
+          <Attribute Name="Zustand Diskret" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Diskret">
+            <Version>1.0.0</Version>
+          </Attribute>
+        </RoleRequirements>
+      </InternalElement>
+      <InternalLink RefPartnerSideA="3391e9a3-08d5-4ab5-bdd2-516806a6100d" RefPartnerSideB="8065c104-f4fe-41d2-b621-9ae05a85e829" Name="InternalLink" />
+    </InternalElement>
+    <InternalElement Name="T3" ID="03fac507-ad9a-4520-ae79-251a9dbe6cce" RefBaseSystemUnitPath="VERA_Komponenten/QFC_Vorlagenbehälter">
+      <Attribute Name="Level" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Füllstand">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>QVF Engineering GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="3ca423ea-1c5e-48ba-bd68-5bd869d8344e" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="c1756b9f-aaf2-41b9-80f2-b1f81bcf2455" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="VEGA EL" ID="da7070af-986b-470d-ae60-83499ce2aab8" RefBaseSystemUnitPath="VERA_Sensoren/VEGA EL">
+        <ExternalInterface Name="SK_OUT" ID="b04e129a-133d-4e90-a221-72e0525ff54a" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+      </InternalElement>
+      <InternalElement Name="Wenglor TO" ID="fd78cbf3-bf1f-4e02-885f-ae05805bcc1a" RefBaseSystemUnitPath="VERA_Sensoren/Wenglor TO">
+        <ExternalInterface Name="SD_OUT" ID="e16732a0-370f-4afb-abfb-a64256ee7b8f" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Diskreter Grenzstandssensor" />
+      </InternalElement>
+      <InternalElement Name="Laugezulauf" ID="3b68a910-f0d5-4bcb-b22f-d9ea4d7cd941" RefBaseSystemUnitPath="VERA_Komponenten/Produkt_Quelle">
+        <ExternalInterface Name="Product_OUT" ID="ae981282-83b1-4db7-8bd3-f872a4690e25" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Produkt_Quelle" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="ae981282-83b1-4db7-8bd3-f872a4690e25" RefPartnerSideB="3ca423ea-1c5e-48ba-bd68-5bd869d8344e" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="c1756b9f-aaf2-41b9-80f2-b1f81bcf2455" RefPartnerSideB="7cfc5c99-e594-4fcf-9621-9e3f102d04c1" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="c1756b9f-aaf2-41b9-80f2-b1f81bcf2455" RefPartnerSideB="54d72a06-0f6c-4082-a791-82afec121228" Name="InternalLink" />
+      <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Tank/Vorlagenbehälter" />
+    </InternalElement>
+    <InternalElement Name="Rohr_T3_TB" ID="369a8964-ab4a-4ebc-9360-00e21d64469c" RefBaseSystemUnitPath="VERA_Komponenten/Rohr">
+      <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="7cfc5c99-e594-4fcf-9621-9e3f102d04c1" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="a61f69e7-fc07-4b29-afe7-dd6406055925" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="AD_V_T3_TB" ID="47579473-8cf2-40fe-949d-84adc2196fbe">
+        <Attribute Name="Öffnung" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Diskret">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <ExternalInterface Name="DL_IN" ID="668ccdd9-d47c-4555-b5e9-b7c59a3f3e1c" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_IN" />
+        <ExternalInterface Name="Product_IN" ID="0384ae42-f138-4202-80c1-f21b0b131556" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Product_OUT" ID="baddb149-6094-4ce0-a1d4-4e28a12e8817" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <ExternalInterface Name="SD_IN" ID="5bc9879e-078a-4bd6-a6ae-77dfcd76f627" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+        <InternalElement Name="YXC113" ID="dcd7208e-5b7f-4c48-a9da-f71498ff30e3">
+          <ExternalInterface Name="YXC113_Sicherheitsabschaltung" ID="9b31837b-23f2-4ec6-8b41-77b0c5cbd394" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+          <ExternalInterface Name="YXC113_Ventilsteuerung" ID="efa2037e-16e2-4a83-9f75-bde7efecd358" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_OUT" />
+          <ExternalInterface Name="YXC113_SK_IN" ID="84055774-cab8-41ca-8f93-1b77585cdec6" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_IN" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/SPS_Kontroll-Logik" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="efa2037e-16e2-4a83-9f75-bde7efecd358" RefPartnerSideB="5bc9879e-078a-4bd6-a6ae-77dfcd76f627" Name="Link" />
+        <InternalLink RefPartnerSideA="baddb149-6094-4ce0-a1d4-4e28a12e8817" RefPartnerSideB="40b728c9-dba4-4fa5-a502-717ea4c34678" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Ventil/Ventil (Diskret)">
+          <Attribute Name="Zustand Diskret" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Diskret">
+            <Version>1.0.0</Version>
+          </Attribute>
+        </RoleRequirements>
+      </InternalElement>
+      <InternalLink RefPartnerSideA="a61f69e7-fc07-4b29-afe7-dd6406055925" RefPartnerSideB="0384ae42-f138-4202-80c1-f21b0b131556" Name="InternalLink" />
+    </InternalElement>
+    <InternalElement Name="TB" ID="b1aa64d1-ec0c-4369-8587-27e8f1664ade" RefBaseSystemUnitPath="VERA_Komponenten/QFC_Behälter_Groß">
+      <Attribute Name="PH Wert" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/pH-Wert">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="PH Range">
+          <OrdinalScaledType>
+            <RequiredMaxValue>14</RequiredMaxValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Leitfähigkeit" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Leitfähigkeit">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Druck" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/Druck" Unit="Bar">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="">
+          <OrdinalScaledType>
+            <RequiredMaxValue>10</RequiredMaxValue>
+            <RequiredValue>7</RequiredValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Füllstand/Level" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Füllstand">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Temperatur/Temperature" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Temperatur">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>QVF Engineering GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="40b728c9-dba4-4fa5-a502-717ea4c34678" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="65dc6d6d-e8c9-4215-91cc-7bd36df208f8" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="LIC111" ID="00b8f611-e9f0-4d3a-bfa8-08ef352f3cdd" RefBaseSystemUnitPath="VERA_Sensoren/VEGAFLEX">
+        <ExternalInterface Name="SK_OUT" ID="f8c1d395-5e5e-4caf-9540-a753ccdd9b1b" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <InternalElement Name="YCZ111" ID="eeb8d741-5a4c-438a-8ff2-62c289476b65">
+          <ExternalInterface Name="SK_IN" ID="9a28ae34-9dd1-41ae-b8a7-58f1b5b798b7" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_IN" />
+          <ExternalInterface Name="SK_OUT" ID="3fbeccb3-72dc-4dac-8a65-c3ab494076a6" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+          <InternalLink RefPartnerSideA="3fbeccb3-72dc-4dac-8a65-c3ab494076a6" RefPartnerSideB="4b290e0f-578e-4445-bf8d-69723457e8fc" Name="InternalLink" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/SPS_Kontroll-Logik" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="f8c1d395-5e5e-4caf-9540-a753ccdd9b1b" RefPartnerSideB="9a28ae34-9dd1-41ae-b8a7-58f1b5b798b7" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+      </InternalElement>
+      <InternalElement Name="Plaromaster" ID="483b42b4-6fd4-4ad0-9b2c-5aab21fe6133" RefBaseSystemUnitPath="VERA_Aktoren/Plaromaster">
+        <InternalElement Name="Asynchronmotor" ID="eb1fce42-8a18-44d9-b410-834c20cb48e9">
+          <ExternalInterface Name="SD_IN" ID="5c30384f-3e08-41d7-b4c0-be6c1983da23" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+        </InternalElement>
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Rührwerk" />
+      </InternalElement>
+      <InternalElement Name="XIC113" ID="e492cd22-86dd-4bba-a1f6-7485e4f89083" RefBaseSystemUnitPath="VERA_Sensoren/EGA143">
+        <Attribute Name="pH-Wert" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/pH-Wert">
+          <Version>1.0.0</Version>
+          <DefaultValue>7</DefaultValue>
+          <Constraint Name="PH Range">
+            <OrdinalScaledType>
+              <RequiredMaxValue>14</RequiredMaxValue>
+              <RequiredMinValue>0</RequiredMinValue>
+            </OrdinalScaledType>
+          </Constraint>
+        </Attribute>
+        <Attribute Name="Temperatur" AttributeDataType="xs:int" RefAttributeType="AttributeTypeLib/Temperatur" Unit="°C">
+          <Version>1.0.0</Version>
+          <Constraint Name="">
+            <OrdinalScaledType>
+              <RequiredMaxValue>150</RequiredMaxValue>
+              <RequiredMinValue>-10</RequiredMinValue>
+            </OrdinalScaledType>
+          </Constraint>
+        </Attribute>
+        <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+          <Version>1.0.0</Version>
+          <Value>Sensortechnik Meinsberg GmbH</Value>
+        </Attribute>
+        <ExternalInterface Name="Temperatur" ID="89fd4adf-43c6-42f7-b8c2-1e9d1719d43e" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <ExternalInterface Name="pH" ID="fa37f15e-71c4-4926-9120-ee2cb20b9c03" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <InternalLink RefPartnerSideA="fa37f15e-71c4-4926-9120-ee2cb20b9c03" RefPartnerSideB="84055774-cab8-41ca-8f93-1b77585cdec6" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/pH-Sensor" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Temperatursensor" />
+      </InternalElement>
+      <InternalElement Name="LOAH114" ID="7d688d2d-0c93-4e4f-9d45-2819301da161" RefBaseSystemUnitPath="VERA_Sensoren/Wenglor TO">
+        <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+          <Version>1.0.0</Version>
+          <Value>Wenglor sensoric GmbH</Value>
+        </Attribute>
+        <ExternalInterface Name="SD_OUT" ID="cd297411-8eb8-4615-ab6e-6fbe60ac8ebf" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_OUT" />
+        <InternalElement Name="ZZL114" ID="2d75c49e-ac13-41ee-a447-a983566af362">
+          <ExternalInterface Name="LOAH114_Grenzstand" ID="f9c65d88-7cfa-4110-83ce-02bfad5fc1a2" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+          <ExternalInterface Name="ZZL114_Sicherheitsabschaltung" ID="935d5f64-c826-4d14-99a5-98815f86d6a8" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_OUT" />
+          <InternalLink RefPartnerSideA="935d5f64-c826-4d14-99a5-98815f86d6a8" RefPartnerSideB="cb6e3bbe-e02e-4f07-a1f2-ab40fe8a2e10" Name="InternalLink" />
+          <InternalLink RefPartnerSideA="935d5f64-c826-4d14-99a5-98815f86d6a8" RefPartnerSideB="9b31837b-23f2-4ec6-8b41-77b0c5cbd394" Name="InternalLink" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/SPS_Kontroll-Logik" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="cd297411-8eb8-4615-ab6e-6fbe60ac8ebf" RefPartnerSideB="f9c65d88-7cfa-4110-83ce-02bfad5fc1a2" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Diskreter Grenzstandssensor" />
+      </InternalElement>
+      <InternalElement Name="X1_Kühlung" ID="0341f4e3-aa25-47f3-8137-e1421f199835" RefBaseSystemUnitPath="VERA_Komponenten/Rohr">
+        <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <ExternalInterface Name="Product_OUT" ID="493ff1b6-23d1-4f79-a686-e2f81f0f4977" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <ExternalInterface Name="Product_IN" ID="8817f033-f58b-4052-a350-af0aa6f0ffe6" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <InternalElement Name="Kühlwasserzulauf" ID="ab174207-aaf9-4c50-a749-b4cf05333ee4" RefBaseSystemUnitPath="VERA_Komponenten/Produkt_Quelle">
+          <ExternalInterface Name="Product_OUT" ID="e716e5a7-2c14-46e8-893a-94cfefadd763" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Produkt_Quelle" />
+        </InternalElement>
+        <InternalElement Name="VK_TB_X1" ID="0f69bf38-f6c2-4655-a07b-47e8467ded32" RefBaseSystemUnitPath="VERA_Aktoren/Elektropneumatisches Stellventil Typ 2031K">
+          <Attribute Name="Zustand Koninuierlich" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Koninuierlich">
+            <Version>1.0.0</Version>
+          </Attribute>
+          <ExternalInterface Name="DL_IN" ID="53c1e215-bde4-444a-81ad-34a11195d358" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_IN" />
+          <ExternalInterface Name="Product_IN" ID="c4786e14-089f-42aa-9774-1675249eb87c" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+          <ExternalInterface Name="Product_OUT" ID="1b2e0bce-405a-417e-aa07-483ad29993c3" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+          <InternalElement Name="VK_TB_X1_Motor" ID="cd14d670-6e0a-499a-9f82-3533dceddf2f">
+            <ExternalInterface Name="TB_Temperatur" ID="5c73a840-3b29-407b-99f2-7caecd39ba24" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_IN" />
+            <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Stellmotor" />
+          </InternalElement>
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Ventil/Ventil (Kontinuierlich)" />
+        </InternalElement>
+        <InternalElement Name="Kühlwasserablauf" ID="2e8e1ffd-9e46-47c6-8f1e-b38c3c9605bd" RefBaseSystemUnitPath="VERA_Komponenten/Produkt_Senke">
+          <ExternalInterface Name="Product_IN" ID="ae38101e-b017-4f10-98c7-cb54e7510bda" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Produkt_Senke" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="e716e5a7-2c14-46e8-893a-94cfefadd763" RefPartnerSideB="8817f033-f58b-4052-a350-af0aa6f0ffe6" Name="InternalLink" />
+        <InternalLink RefPartnerSideA="493ff1b6-23d1-4f79-a686-e2f81f0f4977" RefPartnerSideB="c4786e14-089f-42aa-9774-1675249eb87c" Name="InternalLink" />
+        <InternalLink RefPartnerSideA="1b2e0bce-405a-417e-aa07-483ad29993c3" RefPartnerSideB="ae38101e-b017-4f10-98c7-cb54e7510bda" Name="InternalLink" />
+      </InternalElement>
+      <InternalElement Name="TC112" ID="61e890a4-8230-4634-9e75-42dfe024f813" RefBaseSystemUnitPath="VERA_Sensoren/Wiederstandsthermometer Typ THR">
+        <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+          <Version>1.0.0</Version>
+          <Value>QVF Engineering GmbH</Value>
+        </Attribute>
+        <Attribute Name="Temperatur" AttributeDataType="xs:int" RefAttributeType="AttributeTypeLib/Temperatur" Unit="°C">
+          <Version>1.0.0</Version>
+          <Constraint Name="">
+            <OrdinalScaledType>
+              <RequiredMaxValue>150</RequiredMaxValue>
+              <RequiredMinValue>-10</RequiredMinValue>
+            </OrdinalScaledType>
+          </Constraint>
+        </Attribute>
+        <ExternalInterface Name="SK_OUT" ID="6710a3e0-ae4d-4957-9835-c544ba513806" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Temperatursensor" />
+      </InternalElement>
+      <InternalElement Name="LOAL115" ID="9f8bdf19-9fd5-485d-91e4-1b5620e9aa35" RefBaseSystemUnitPath="VERA_Sensoren/Wenglor TO">
+        <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+          <Version>1.0.0</Version>
+          <Value>Wenglor sensoric GmbH</Value>
+        </Attribute>
+        <ExternalInterface Name="SD_OUT" ID="93c1e60f-b103-4dfe-b59b-04ccb5fb2c7c" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_OUT" />
+        <InternalElement Name="MSL115" ID="9b23c958-1fc0-40e6-a910-cb9a3bec7fd6">
+          <ExternalInterface Name="MSL115_Grenzstand" ID="aebc2857-1535-4ec1-ae23-0c4a493526cc" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+          <ExternalInterface Name="MSL115_Abschaltung" ID="5280acb2-1741-45b6-9eb4-7f5c32e50d2e" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_OUT" />
+          <InternalLink RefPartnerSideA="5280acb2-1741-45b6-9eb4-7f5c32e50d2e" RefPartnerSideB="01770720-2122-4369-b2ab-25aa8388c718" Name="InternalLink" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/SPS_Kontroll-Logik" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="93c1e60f-b103-4dfe-b59b-04ccb5fb2c7c" RefPartnerSideB="aebc2857-1535-4ec1-ae23-0c4a493526cc" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Diskreter Grenzstandssensor" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="6710a3e0-ae4d-4957-9835-c544ba513806" RefPartnerSideB="5c73a840-3b29-407b-99f2-7caecd39ba24" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="65dc6d6d-e8c9-4215-91cc-7bd36df208f8" RefPartnerSideB="c73e1fff-305c-40dd-be4d-f4375c8f0f4d" Name="InternalLink" />
+      <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Tank/Behälter" />
+      <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Tank/Vorlagenbehälter" />
+    </InternalElement>
+    <InternalElement Name="Rohr_TB_TW" ID="1555001b-e18d-4a98-ae31-3bc313e5b129" RefBaseSystemUnitPath="VERA_Komponenten/Rohr">
+      <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="c73e1fff-305c-40dd-be4d-f4375c8f0f4d" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="75669864-a47a-4884-aafb-618abb3ef840" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="VK_TB_TW" ID="386f9051-677f-48d9-a6a8-52869b91f0a3" RefBaseSystemUnitPath="VERA_Aktoren/Elektropneumatisches Stellventil Typ 2031K">
+        <Attribute Name="Zustand Koninuierlich" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Koninuierlich">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <ExternalInterface Name="DL_IN" ID="3aa99db1-9db1-4346-bf84-242b1ae1a5ea" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_IN" />
+        <ExternalInterface Name="Product_IN" ID="4e945aeb-ca7c-4a4b-997c-b79f95c50e52" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Product_OUT" ID="f19fc5ad-9698-464f-abb3-5cb19c710d57" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <InternalElement Name="VK_TB_TW_Motor" ID="99f079bd-ccbf-4148-b42a-e2733a1c8099">
+          <ExternalInterface Name="TB_Füllstand" ID="4b290e0f-578e-4445-bf8d-69723457e8fc" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_IN" />
+          <ExternalInterface Name="Abschaltung" ID="01770720-2122-4369-b2ab-25aa8388c718" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Stellmotor" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="f19fc5ad-9698-464f-abb3-5cb19c710d57" RefPartnerSideB="cd3b3607-2a4c-4d49-b385-2651a58c283c" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Ventil/Ventil (Kontinuierlich)" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="75669864-a47a-4884-aafb-618abb3ef840" RefPartnerSideB="4e945aeb-ca7c-4a4b-997c-b79f95c50e52" Name="InternalLink" />
+    </InternalElement>
+    <InternalElement Name="Rohr_T2_TW" ID="43353a1a-3008-4487-9d42-78ef86210ad4" RefBaseSystemUnitPath="VERA_Komponenten/Rohr">
+      <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="c2a49361-9f03-4a76-83f8-dc7446c6fc87" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="a47ffdd8-0fa8-427e-a516-2fadde79c308" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="VD_T2_TW" ID="69c29bbb-4578-424d-8fa8-3b718e61554f" RefBaseSystemUnitPath="[VERA_Aktoren]/[2/2-Wege-Membranventil]">
+        <Attribute Name="Zustand Diskret" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Diskret">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <ExternalInterface Name="DL_IN" ID="1bb47719-6ceb-4108-8421-64b50b2c88ad" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_IN" />
+        <ExternalInterface Name="Product_IN" ID="4521ce36-9d70-4452-8a07-03102a00e3b2" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Product_OUT" ID="239b62c1-fbc2-419c-bdb8-031d745d0e00" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <InternalElement Name="Regelung" ID="06266a30-089b-433f-9d83-d6231f805592">
+          <ExternalInterface Name="SD_IN" ID="108c6e92-8b68-41be-a760-d82f40c67264" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="239b62c1-fbc2-419c-bdb8-031d745d0e00" RefPartnerSideB="cd3b3607-2a4c-4d49-b385-2651a58c283c" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Ventil/Ventil (Diskret)" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="a47ffdd8-0fa8-427e-a516-2fadde79c308" RefPartnerSideB="4521ce36-9d70-4452-8a07-03102a00e3b2" Name="InternalLink" />
+    </InternalElement>
+    <InternalElement Name="Rohr_T3_TW" ID="18357d52-af43-459f-9c60-f9304fb3d5a5" RefBaseSystemUnitPath="VERA_Komponenten/Rohr">
+      <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="54d72a06-0f6c-4082-a791-82afec121228" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="33cd9db3-248e-4026-8e79-0f0beb6630d6" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="VD_T3_TW" ID="0da638be-ffdf-46dc-89a8-94eca67d1931" RefBaseSystemUnitPath="[VERA_Aktoren]/[2/2-Wege-Membranventil]">
+        <Attribute Name="Zustand Diskret" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Diskret">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <ExternalInterface Name="DL_IN" ID="acee447c-e6c8-4bff-bdb4-8ee0656bc052" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_IN" />
+        <ExternalInterface Name="Product_IN" ID="dff804df-93bd-4023-9778-587d75f7e74f" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Product_OUT" ID="f8bda8df-a243-4e65-b5e4-2b652f22b564" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <InternalElement Name="Regelung" ID="c542e983-181d-4215-ab0e-bd81d626a4e9">
+          <ExternalInterface Name="SD_IN" ID="89d57533-299a-451d-8e1c-19c224c1a6d4" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="f8bda8df-a243-4e65-b5e4-2b652f22b564" RefPartnerSideB="cd3b3607-2a4c-4d49-b385-2651a58c283c" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Ventil/Ventil (Diskret)" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="33cd9db3-248e-4026-8e79-0f0beb6630d6" RefPartnerSideB="dff804df-93bd-4023-9778-587d75f7e74f" Name="InternalLink" />
+    </InternalElement>
+    <InternalElement Name="T4" ID="d420a5c4-7acb-40ab-a778-c5d56de93eb3" RefBaseSystemUnitPath="VERA_Komponenten/QFC_Vorlagenbehälter">
+      <Attribute Name="Level" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Füllstand">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>QVF Engineering GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="843fbb6d-095b-4868-acd8-91e16ca6cb37" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="ab2bdec9-3223-4066-8af6-5053411f7e29" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="VEGA EL" ID="45549647-a7b9-4260-889e-560cdfb6e6ad" RefBaseSystemUnitPath="VERA_Sensoren/VEGA EL">
+        <ExternalInterface Name="SK_OUT" ID="8e0c9c2c-b6f9-43e5-9786-2f25446f3f4c" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+      </InternalElement>
+      <InternalElement Name="Wenglor TO" ID="91e57774-d7e9-4b84-a1b6-0006bcfa9478" RefBaseSystemUnitPath="VERA_Sensoren/Wenglor TO">
+        <ExternalInterface Name="SD_OUT" ID="772d4e4d-cb3b-44c0-9ab2-5d1004aeb28a" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Diskreter Grenzstandssensor" />
+      </InternalElement>
+      <InternalElement Name="Wasser+Glycol" ID="d3ec455c-4730-43a7-a955-22cead33b7b2" RefBaseSystemUnitPath="VERA_Komponenten/Produkt_Quelle">
+        <ExternalInterface Name="Product_OUT" ID="5e5f8082-ca19-42b1-af6a-7a51411fc111" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Produkt_Quelle" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="5e5f8082-ca19-42b1-af6a-7a51411fc111" RefPartnerSideB="843fbb6d-095b-4868-acd8-91e16ca6cb37" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="ab2bdec9-3223-4066-8af6-5053411f7e29" RefPartnerSideB="3837c6e1-340b-4dfe-b67a-5420acd91a4b" Name="InternalLink" />
+      <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Tank/Vorlagenbehälter" />
+    </InternalElement>
+    <InternalElement Name="Rohr_T4_TS" ID="2f833df3-026e-4eb0-b925-144998816184" RefBaseSystemUnitPath="VERA_Komponenten/Rohr">
+      <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="3837c6e1-340b-4dfe-b67a-5420acd91a4b" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="d56cbab2-858d-4987-b9f6-1fb76e11c0a5" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="VD_T4_TS" ID="68f8e323-746f-455d-a0ae-1527324845b1" RefBaseSystemUnitPath="[VERA_Aktoren]/[2/2-Wege-Membranventil]">
+        <Attribute Name="Zustand Diskret" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Diskret">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <ExternalInterface Name="DL_IN" ID="16ba527d-1436-4c91-ab6a-0deae08c37e7" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_IN" />
+        <ExternalInterface Name="Product_IN" ID="b8471304-148d-443c-bc62-261df6208e57" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Product_OUT" ID="d237e7bb-a115-443f-978e-ce7b75dd971a" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <InternalElement Name="Regelung" ID="1c0edb22-9038-4d42-ae2a-6f3b0f604d02">
+          <ExternalInterface Name="SD_IN" ID="a04366fa-a54c-4759-b500-e94c204ff0e6" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="d237e7bb-a115-443f-978e-ce7b75dd971a" RefPartnerSideB="3907994c-303e-4fef-a1cf-26171798be33" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Ventil/Ventil (Diskret)" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="d56cbab2-858d-4987-b9f6-1fb76e11c0a5" RefPartnerSideB="b8471304-148d-443c-bc62-261df6208e57" Name="InternalLink" />
+    </InternalElement>
+    <InternalElement Name="TS" ID="56035d65-021f-4f7a-b5a4-923d1ee205b6" RefBaseSystemUnitPath="VERA_Komponenten/QFC_Behälter_Klein">
+      <Attribute Name="Füllstand/Level" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Füllstand">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Temperatur/Temperature" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Temperatur">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="PH Wert" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/pH-Wert">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="PH Range">
+          <OrdinalScaledType>
+            <RequiredMaxValue>14</RequiredMaxValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Leitfähigkeit" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Leitfähigkeit">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Druck" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/Druck" Unit="Bar">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="">
+          <OrdinalScaledType>
+            <RequiredMaxValue>10</RequiredMaxValue>
+            <RequiredValue>7</RequiredValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>QVF Engineering GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="3907994c-303e-4fef-a1cf-26171798be33" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="c0281cf8-8e76-4410-b372-61b754c904bf" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="Endress &amp; Hauser Liquicap M" ID="c5b4ed5f-908b-46cf-810b-f2502dae943a" RefBaseSystemUnitPath="VERA_Sensoren/Endress &amp; Hauser Liquicap M">
+        <ExternalInterface Name="SK_OUT" ID="e22e1bc9-5842-4da1-8a4b-6b11bee00aa4" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <InternalLink RefPartnerSideA="e22e1bc9-5842-4da1-8a4b-6b11bee00aa4" RefPartnerSideB="a04366fa-a54c-4759-b500-e94c204ff0e6" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+      </InternalElement>
+      <InternalElement Name="IC133" ID="8847d8a6-e2cc-479b-9aee-5bcc19e0c227" RefBaseSystemUnitPath="[VERA_Sensoren]/[Leitfähigkeits-Messzelle LTG/LTC]">
+        <Attribute Name="Leitfähigkeit" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Leitfähigkeit">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+          <Version>1.0.0</Version>
+          <Value>Sensortechnik Meinsberg GmbH</Value>
+        </Attribute>
+        <ExternalInterface Name="SK_OUT" ID="29ba2211-7a27-41ce-b69f-8b36e6807e78" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <InternalLink RefPartnerSideA="29ba2211-7a27-41ce-b69f-8b36e6807e78" RefPartnerSideB="1ef8a270-86fb-494e-af2d-1aff4dc26dd4" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Leitfähigkeitssensor" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="c0281cf8-8e76-4410-b372-61b754c904bf" RefPartnerSideB="03b3de91-e15d-4b70-bc9e-04b1a81cab9d" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="c0281cf8-8e76-4410-b372-61b754c904bf" RefPartnerSideB="53ee69e5-9eeb-43f1-9811-9dc49c52fd80" Name="InternalLink" />
+      <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Tank/Behälter" />
+      <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Tank/Vorlagenbehälter" />
+    </InternalElement>
+    <InternalElement Name="Rohr_TS_TW" ID="568e0112-1ae7-4b22-b223-00f3ee2ea2da" RefBaseSystemUnitPath="VERA_Komponenten/Rohr">
+      <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="03b3de91-e15d-4b70-bc9e-04b1a81cab9d" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="d7e5eb8d-7bbe-4b9d-932d-a631fd0e00ff" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="Wasser+Glycol" ID="56fe3032-d059-4acb-a299-757b9ffa6a1d" RefBaseSystemUnitPath="[VERA_Aktoren]/[2/2-Wege-Membranventil]">
+        <Attribute Name="Zustand Diskret" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Diskret">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <ExternalInterface Name="DL_IN" ID="13583b82-ace3-42ca-b1b4-673da5a9fc46" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_IN" />
+        <ExternalInterface Name="Product_IN" ID="b9fd797b-314f-423e-8e10-0b9f6e51873a" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Product_OUT" ID="a50718e4-3b6a-4837-99a3-b806ae7e45d2" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <InternalElement Name="Regelung" ID="6215ee4e-4895-4339-be51-fd540d4b6864">
+          <ExternalInterface Name="SD_IN" ID="1ef8a270-86fb-494e-af2d-1aff4dc26dd4" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="a50718e4-3b6a-4837-99a3-b806ae7e45d2" RefPartnerSideB="cd3b3607-2a4c-4d49-b385-2651a58c283c" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Ventil/Ventil (Diskret)" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="d7e5eb8d-7bbe-4b9d-932d-a631fd0e00ff" RefPartnerSideB="b9fd797b-314f-423e-8e10-0b9f6e51873a" Name="InternalLink" />
+    </InternalElement>
+    <InternalElement Name="Rohr_TS_TM" ID="2c5d8ac3-a5b5-4bb3-bf8a-1ade0b0d920f" RefBaseSystemUnitPath="VERA_Komponenten/Rohr">
+      <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="53ee69e5-9eeb-43f1-9811-9dc49c52fd80" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="71878054-1e1f-4d20-9add-bf9752d57ff8" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="X3_Kühlung" ID="a89fb7ab-d7c4-4778-b47b-bb6a59f9f0c2" RefBaseSystemUnitPath="VERA_Komponenten/Rohr">
+        <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <ExternalInterface Name="Product_IN" ID="5c3bbd6f-6e6b-4e96-9085-47bd9e099fc9" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Product_OUT" ID="dbc6b1dd-d416-4cda-8a1e-97ab17c0ba96" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <ExternalInterface Name="Kühlwasser_IN" ID="72fae0cb-99a7-401b-bea1-171aea57967d" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Kühlwasser_OUT" ID="0ddc7f71-828b-4343-8930-ca1a33a8e4d1" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <InternalElement Name="X3_Kühlwasserzulauf" ID="e942ac4e-35c2-4839-bbb4-91d33524a777" RefBaseSystemUnitPath="VERA_Komponenten/Produkt_Quelle">
+          <ExternalInterface Name="Product_OUT" ID="86c0553c-33fa-4c33-a867-d7d7ceef3d6e" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Produkt_Quelle" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Produkt_Quelle/Wasserzulauf/Kühlwasserzulauf" />
+        </InternalElement>
+        <InternalElement Name="X3_Kühlwasserablauf" ID="0fb7a3d5-05f7-4de1-bfc9-3ec5c293c3fa" RefBaseSystemUnitPath="VERA_Komponenten/Produkt_Senke">
+          <ExternalInterface Name="Product_IN" ID="ad42c4a1-87e0-4d81-b046-461ef60940ec" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Produkt_Senke" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Produkt_Senke/Wasserablauf/Kühlwasserablauf" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="86c0553c-33fa-4c33-a867-d7d7ceef3d6e" RefPartnerSideB="72fae0cb-99a7-401b-bea1-171aea57967d" Name="InternalLink" />
+        <InternalLink RefPartnerSideA="0ddc7f71-828b-4343-8930-ca1a33a8e4d1" RefPartnerSideB="ad42c4a1-87e0-4d81-b046-461ef60940ec" Name="InternalLink" />
+        <InternalLink RefPartnerSideA="dbc6b1dd-d416-4cda-8a1e-97ab17c0ba96" RefPartnerSideB="9caa2fc6-f343-477a-9466-a4b571f66757" Name="InternalLink" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="71878054-1e1f-4d20-9add-bf9752d57ff8" RefPartnerSideB="5c3bbd6f-6e6b-4e96-9085-47bd9e099fc9" Name="InternalLink" />
+    </InternalElement>
+    <InternalElement Name="TM" ID="dc562bab-35d6-482d-bff5-02634b33be9e" RefBaseSystemUnitPath="VERA_Komponenten/QFC_Behälter_Mittel">
+      <Attribute Name="PH Wert" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/pH-Wert">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="PH Range">
+          <OrdinalScaledType>
+            <RequiredMaxValue>14</RequiredMaxValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Leitfähigkeit" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Leitfähigkeit">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Druck" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/Druck" Unit="Bar">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="">
+          <OrdinalScaledType>
+            <RequiredMaxValue>10</RequiredMaxValue>
+            <RequiredValue>7</RequiredValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Füllstand/Level" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Füllstand">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Temperatur/Temperature" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Temperatur">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>QVF Engineering GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="9caa2fc6-f343-477a-9466-a4b571f66757" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="565a7efe-7f07-4158-8974-8d3162f41d08" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="Endress &amp; Hauser Liquicap M" ID="a6e2c644-78de-446b-8250-30dd08699ba0" RefBaseSystemUnitPath="VERA_Sensoren/Endress &amp; Hauser Liquicap M">
+        <ExternalInterface Name="SK_OUT" ID="3b55bef4-df76-4709-9d28-265742b1fd79" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="565a7efe-7f07-4158-8974-8d3162f41d08" RefPartnerSideB="d7c4440f-d8e2-4c92-ab86-76ec74315001" Name="InternalLink" />
+      <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Tank/Behälter" />
+      <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Tank/Vorlagenbehälter" />
+    </InternalElement>
+    <InternalElement Name="Rohr_TM_T4" ID="dbbbf73e-2c2a-4a24-83a4-11c92a867363" RefBaseSystemUnitPath="VERA_Komponenten/Rohr">
+      <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="d7c4440f-d8e2-4c92-ab86-76ec74315001" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="f9b388e4-dc79-4fcf-9779-ead1efd575f5" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="PC_TM_T4" ID="29d94780-4d2e-4491-9a5a-520d7b33b290" RefBaseSystemUnitPath="VERA_Aktoren/Membran-Dosierpumpe TrueDos222D">
+        <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+          <Version>1.0.0</Version>
+          <Value>ALLDOS Eichler GmbH</Value>
+        </Attribute>
+        <Attribute Name="Zustand Koninuierlich" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Koninuierlich">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <ExternalInterface Name="Product_IN" ID="438dbe4a-9a17-40b1-9185-4c2c5cd40569" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Product_OUT" ID="a1bbc6fb-732a-4447-b028-ed0560aa20f8" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <InternalLink RefPartnerSideA="a1bbc6fb-732a-4447-b028-ed0560aa20f8" RefPartnerSideB="843fbb6d-095b-4868-acd8-91e16ca6cb37" Name="InternalLink" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="f9b388e4-dc79-4fcf-9779-ead1efd575f5" RefPartnerSideB="438dbe4a-9a17-40b1-9185-4c2c5cd40569" Name="InternalLink" />
+    </InternalElement>
+    <InternalElement Name="TW" ID="08551106-f7a8-4c4a-b1e8-0c6ad0627dbf" RefBaseSystemUnitPath="VERA_Komponenten/QFC_Vorlagenbehälter">
+      <Attribute Name="Level" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Füllstand">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>QVF Engineering GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="cd3b3607-2a4c-4d49-b385-2651a58c283c" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="29540c8a-1064-4d7e-9d93-d273c05a25c0" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="XC143" ID="d0252273-079e-4e77-905f-7f20b17eb443" RefBaseSystemUnitPath="VERA_Sensoren/EGA143">
+        <Attribute Name="pH-Wert" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/pH-Wert">
+          <Version>1.0.0</Version>
+          <DefaultValue>7</DefaultValue>
+          <Constraint Name="PH Range">
+            <OrdinalScaledType>
+              <RequiredMaxValue>14</RequiredMaxValue>
+              <RequiredMinValue>0</RequiredMinValue>
+            </OrdinalScaledType>
+          </Constraint>
+        </Attribute>
+        <Attribute Name="Temperatur" AttributeDataType="xs:int" RefAttributeType="AttributeTypeLib/Temperatur" Unit="°C">
+          <Version>1.0.0</Version>
+          <Constraint Name="">
+            <OrdinalScaledType>
+              <RequiredMaxValue>150</RequiredMaxValue>
+              <RequiredMinValue>-10</RequiredMinValue>
+            </OrdinalScaledType>
+          </Constraint>
+        </Attribute>
+        <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+          <Version>1.0.0</Version>
+          <Value>Sensortechnik Meinsberg GmbH</Value>
+        </Attribute>
+        <ExternalInterface Name="Temperatur" ID="3d29ce00-60b1-4331-80c5-8b57ddd15ad4" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <ExternalInterface Name="pH" ID="9bea3de9-7b1f-4472-8748-75cb16b5f4eb" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <InternalLink RefPartnerSideA="9bea3de9-7b1f-4472-8748-75cb16b5f4eb" RefPartnerSideB="108c6e92-8b68-41be-a760-d82f40c67264" Name="InternalLink" />
+        <InternalLink RefPartnerSideA="9bea3de9-7b1f-4472-8748-75cb16b5f4eb" RefPartnerSideB="89d57533-299a-451d-8e1c-19c224c1a6d4" Name="InternalLink" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/pH-Sensor" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Temperatursensor" />
+      </InternalElement>
+      <InternalElement Name="Rohr_TW_Abwasser" ID="e6f49922-5aaa-4bf5-8ff0-d0939adc0e21" RefBaseSystemUnitPath="VERA_Komponenten/Rohr">
+        <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <ExternalInterface Name="Product_IN" ID="ffe7bfbc-b263-4859-a392-cc57fea8c4e0" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Product_OUT" ID="d6344049-cb4c-43d4-8dd7-84a86b6db4f6" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+        <InternalElement Name="Rohr_TW_Abwasser" ID="d9f355d6-48cf-4dd5-ab51-33037c153339" RefBaseSystemUnitPath="[VERA_Aktoren]/[2/2-Wege-Membranventil]">
+          <Attribute Name="Zustand Diskret" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Diskret">
+            <Version>1.0.0</Version>
+          </Attribute>
+          <ExternalInterface Name="DL_IN" ID="40c2f1bb-2586-44b6-9991-c70a3e997fde" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_IN" />
+          <ExternalInterface Name="Product_IN" ID="e5c63b7c-0efc-435d-a2bb-4f18e253a4cc" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+          <ExternalInterface Name="Product_OUT" ID="b2cd42fc-52a4-4e38-91be-a2ca5050b8da" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+          <InternalElement Name="Steuerung" ID="a6951c76-3714-49c8-acfa-ba514af9ef5a">
+            <ExternalInterface Name="SD_IN" ID="041bb091-c33c-40ff-8f59-2cc5c0ef3c77" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+          </InternalElement>
+          <InternalElement Name="Abwasser" ID="4e39a43b-15d3-47bb-993b-589a1219a605">
+            <ExternalInterface Name="Abschaltung" ID="2374cfc5-05c2-40f9-9fa0-6d9f48e282bb" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+            <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Produkt_Senke" />
+            <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Produkt_Senke/Wasserablauf" />
+          </InternalElement>
+          <InternalLink RefPartnerSideA="b2cd42fc-52a4-4e38-91be-a2ca5050b8da" RefPartnerSideB="2374cfc5-05c2-40f9-9fa0-6d9f48e282bb" Name="InternalLink" />
+          <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Ventil/Ventil (Diskret)" />
+        </InternalElement>
+        <InternalLink RefPartnerSideA="d6344049-cb4c-43d4-8dd7-84a86b6db4f6" RefPartnerSideB="e5c63b7c-0efc-435d-a2bb-4f18e253a4cc" Name="InternalLink" />
+      </InternalElement>
+      <InternalLink RefPartnerSideA="29540c8a-1064-4d7e-9d93-d273c05a25c0" RefPartnerSideB="ffe7bfbc-b263-4859-a392-cc57fea8c4e0" Name="InternalLink" />
+      <InternalLink RefPartnerSideA="9bea3de9-7b1f-4472-8748-75cb16b5f4eb" RefPartnerSideB="041bb091-c33c-40ff-8f59-2cc5c0ef3c77" Name="InternalLink" />
+      <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Tank/Vorlagenbehälter" />
+    </InternalElement>
+  </InstanceHierarchy>
+  <InterfaceClassLib Name="InterfaceClassLib">
+    <Version>1.0.0</Version>
+    <InterfaceClass Name="Product">
+      <Version>1.0.0</Version>
+      <InterfaceClass Name="Product_IN" RefBaseClassPath="Product">
+        <Version>1.0.0</Version>
+      </InterfaceClass>
+      <InterfaceClass Name="Product_OUT" RefBaseClassPath="Product">
+        <Version>1.0.0</Version>
+      </InterfaceClass>
+      <InterfaceClass Name="Product_INOUT" RefBaseClassPath="Product">
+        <Version>1.0.0</Version>
+      </InterfaceClass>
+    </InterfaceClass>
+    <InterfaceClass Name="Signal Kontinuierlich">
+      <Version>1.0.0</Version>
+      <InterfaceClass Name="SK_IN" RefBaseClassPath="Signal Kontinuierlich">
+        <Version>1.0.0</Version>
+      </InterfaceClass>
+      <InterfaceClass Name="SK_OUT" RefBaseClassPath="Signal Kontinuierlich">
+        <Version>1.0.0</Version>
+      </InterfaceClass>
+    </InterfaceClass>
+    <InterfaceClass Name="Signal Diskret">
+      <Version>1.0.0</Version>
+      <InterfaceClass Name="SD_IN" RefBaseClassPath="Signal Diskret">
+        <Version>1.0.0</Version>
+      </InterfaceClass>
+      <InterfaceClass Name="SD_OUT" RefBaseClassPath="Signal Diskret">
+        <Version>1.0.0</Version>
+      </InterfaceClass>
+    </InterfaceClass>
+    <InterfaceClass Name="Druckluft">
+      <Version>1.0.0</Version>
+      <InterfaceClass Name="DL_IN" RefBaseClassPath="Druckluft">
+        <Version>1.0.0</Version>
+      </InterfaceClass>
+      <InterfaceClass Name="DL_OUT" RefBaseClassPath="Druckluft">
+        <Version>1.0.0</Version>
+      </InterfaceClass>
+    </InterfaceClass>
+  </InterfaceClassLib>
+  <RoleClassLib Name="RoleClassLib">
+    <Version>1.0.0</Version>
+    <RoleClass Name="Tank">
+      <Version>1.0.0</Version>
+      <Attribute Name="Füllstand/Level" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Füllstand">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Temperatur/Temperature" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Temperatur">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="690a480b-c7e9-4fad-ae17-7cb17ee241fc" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="9414423b-019f-4800-a47a-f7dab04fd5a0" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <RoleClass Name="Behälter" RefBaseClassPath="RoleClassLib/Tank">
+        <Version>1.0.0</Version>
+        <Attribute Name="PH Wert" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/pH-Wert">
+          <Version>1.0.0</Version>
+          <DefaultValue>7</DefaultValue>
+          <Constraint Name="PH Range">
+            <OrdinalScaledType>
+              <RequiredMaxValue>14</RequiredMaxValue>
+              <RequiredMinValue>0</RequiredMinValue>
+            </OrdinalScaledType>
+          </Constraint>
+        </Attribute>
+        <Attribute Name="Leitfähigkeit" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Leitfähigkeit">
+          <Version>1.0.0</Version>
+        </Attribute>
+        <Attribute Name="Druck" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/Druck" Unit="Bar">
+          <Version>1.0.0</Version>
+          <DefaultValue>7</DefaultValue>
+          <Constraint Name="">
+            <OrdinalScaledType>
+              <RequiredMaxValue>10</RequiredMaxValue>
+              <RequiredValue>7</RequiredValue>
+              <RequiredMinValue>0</RequiredMinValue>
+            </OrdinalScaledType>
+          </Constraint>
+        </Attribute>
+        <ExternalInterface Name="Product_IN" ID="4e2dacfa-5aca-42fd-908c-66942ab93511" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Product_OUT" ID="52590cf9-db4c-4817-b2e0-c18ee1cb9aa7" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      </RoleClass>
+      <RoleClass Name="Vorlagenbehälter" RefBaseClassPath="RoleClassLib/Tank">
+        <Version>1.0.0</Version>
+        <ExternalInterface Name="Product_IN" ID="3a4f9ee7-7fe9-4a19-816f-e250cb31031e" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+        <ExternalInterface Name="Product_OUT" ID="abaf0940-0801-4108-a782-8ce3641c7a6d" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      </RoleClass>
+    </RoleClass>
+    <RoleClass Name="Ventil">
+      <Version>1.0.0</Version>
+      <RoleClass Name="Ventil (Diskret)" RefBaseClassPath="Ventil">
+        <Version>1.0.0</Version>
+        <Attribute Name="Zustand Diskret" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Diskret">
+          <Version>1.0.0</Version>
+        </Attribute>
+      </RoleClass>
+      <RoleClass Name="Ventil (Kontinuierlich)" RefBaseClassPath="Ventil">
+        <Version>1.0.0</Version>
+        <Attribute Name="Zustand Koninuierlich" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Koninuierlich">
+          <Version>1.0.0</Version>
+        </Attribute>
+      </RoleClass>
+    </RoleClass>
+    <RoleClass Name="Sensor">
+      <Version>1.0.0</Version>
+      <RoleClass Name="Koninuierlicher Füllstandssensor" RefBaseClassPath="Sensor">
+        <Version>1.0.0</Version>
+      </RoleClass>
+      <RoleClass Name="Temperatursensor" RefBaseClassPath="Sensor">
+        <Version>1.0.0</Version>
+      </RoleClass>
+      <RoleClass Name="pH-Sensor" RefBaseClassPath="Sensor">
+        <Version>1.0.0</Version>
+      </RoleClass>
+      <RoleClass Name="Leitfähigkeitssensor" RefBaseClassPath="Sensor">
+        <Version>1.0.0</Version>
+      </RoleClass>
+      <RoleClass Name="Diskreter Grenzstandssensor" RefBaseClassPath="Sensor">
+        <Version>1.0.0</Version>
+      </RoleClass>
+    </RoleClass>
+    <RoleClass Name="Rührwerk">
+      <Version>1.0.0</Version>
+    </RoleClass>
+    <RoleClass Name="Stellmotor">
+      <Version>1.0.0</Version>
+    </RoleClass>
+    <RoleClass Name="SPS_Kontroll-Logik">
+      <Version>1.0.0</Version>
+    </RoleClass>
+    <RoleClass Name="Produkt_Quelle">
+      <Version>1.0.0</Version>
+      <RoleClass Name="Wasserzulauf" RefBaseClassPath="Produkt_Quelle">
+        <Version>1.0.0</Version>
+        <RoleClass Name="Kühlwasserzulauf" RefBaseClassPath="Wasserzulauf">
+          <Version>1.0.0</Version>
+        </RoleClass>
+      </RoleClass>
+    </RoleClass>
+    <RoleClass Name="Produkt_Senke">
+      <Version>1.0.0</Version>
+      <RoleClass Name="Wasserablauf" RefBaseClassPath="Produkt_Senke">
+        <Version>1.0.0</Version>
+        <RoleClass Name="Kühlwasserablauf" RefBaseClassPath="RoleClass">
+          <Version>1.0.0</Version>
+        </RoleClass>
+      </RoleClass>
+    </RoleClass>
+    <RoleClass Name="Pumpe">
+      <Version>1.0.0</Version>
+    </RoleClass>
+  </RoleClassLib>
+  <SystemUnitClassLib Name="VERA_Komponenten">
+    <Version>1.0.0</Version>
+    <SystemUnitClass Name="QFC_Vorlagenbehälter" ID="7cbe83ba-fa8a-4f0d-b061-accdbb26f0d9">
+      <Version>1.0.0</Version>
+      <Attribute Name="Level" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Füllstand">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>QVF Engineering GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="9449917f-9b76-4821-b311-3aeaa65faee5" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="bb7e2bee-5744-4e7b-8a4e-7da4e3de0c50" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="VEGA EL" ID="77753ca0-c60c-4111-894f-e4ef19d25d17" RefBaseSystemUnitPath="VERA_Sensoren/VEGA EL">
+        <ExternalInterface Name="SK_OUT" ID="0501751e-4c96-4930-ace3-40c2440cd94b" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+      </InternalElement>
+      <InternalElement Name="Wenglor TO" ID="d00d0408-b23d-42d9-acf3-83c99e75fdf1" RefBaseSystemUnitPath="VERA_Sensoren/Wenglor TO">
+        <ExternalInterface Name="SD_OUT" ID="9bb20d83-215b-4ed1-9eae-6ac018b79889" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Diskreter Grenzstandssensor" />
+      </InternalElement>
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Tank/Vorlagenbehälter" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="QFC_Behälter_Groß" ID="758cbfbb-0f2a-4984-94f9-40312b690e4d">
+      <Version>1.0.0</Version>
+      <Attribute Name="PH Wert" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/pH-Wert">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="PH Range">
+          <OrdinalScaledType>
+            <RequiredMaxValue>14</RequiredMaxValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Leitfähigkeit" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Leitfähigkeit">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Druck" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/Druck" Unit="Bar">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="">
+          <OrdinalScaledType>
+            <RequiredMaxValue>10</RequiredMaxValue>
+            <RequiredValue>7</RequiredValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Füllstand/Level" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Füllstand">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Temperatur/Temperature" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Temperatur">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>QVF Engineering GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="61da9771-4dfc-45ee-8562-8a573ecbf6bf" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="ada7bcde-4aa7-4a9a-9c01-04ef27648bec" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="VEGAFLEX" ID="983139c2-cf52-4fbc-b1ba-23660c4ab6dc" RefBaseSystemUnitPath="VERA_Sensoren/VEGAFLEX">
+        <ExternalInterface Name="SK_OUT" ID="33ea4b7d-f44f-4970-8834-39c120232aa4" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+      </InternalElement>
+      <InternalElement Name="Plaromaster" ID="f8c26e92-5d78-439b-8491-4661ad6bfb1d" RefBaseSystemUnitPath="VERA_Aktoren/Plaromaster">
+        <InternalElement Name="Asynchronmotor" ID="5729f349-b71f-489d-9ed8-ccc57f426b64">
+          <ExternalInterface Name="SD_IN" ID="7581e342-8ff0-4c84-b82b-988f422768ca" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+        </InternalElement>
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Rührwerk" />
+      </InternalElement>
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Tank/Behälter" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Tank/Vorlagenbehälter" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="QFC_Behälter_Mittel" ID="14c97740-9e6c-4a1f-85c0-13f0a77dd145" RefBaseClassPath="">
+      <Version>1.0.0</Version>
+      <Attribute Name="PH Wert" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/pH-Wert">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="PH Range">
+          <OrdinalScaledType>
+            <RequiredMaxValue>14</RequiredMaxValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Leitfähigkeit" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Leitfähigkeit">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Druck" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/Druck" Unit="Bar">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="">
+          <OrdinalScaledType>
+            <RequiredMaxValue>10</RequiredMaxValue>
+            <RequiredValue>7</RequiredValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Füllstand/Level" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Füllstand">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Temperatur/Temperature" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Temperatur">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>QVF Engineering GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="6e3e6414-db1a-4657-9871-bd8f96f0889b" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="71d2f0cb-6273-4dbb-9a57-2d4f66a17790" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="Endress &amp; Hauser Liquicap M" ID="6611bb91-0281-471d-9dac-a1c810c75106" RefBaseSystemUnitPath="VERA_Sensoren/Endress &amp; Hauser Liquicap M">
+        <ExternalInterface Name="SK_OUT" ID="12181db4-56ac-4b06-989d-a01a5ae70662" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+      </InternalElement>
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Tank/Behälter" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Tank/Vorlagenbehälter" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="QFC_Behälter_Klein" ID="ff485828-7c0a-4220-a4f5-e73b7f8e9d43">
+      <Version>1.0.0</Version>
+      <Attribute Name="Füllstand/Level" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Füllstand">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Temperatur/Temperature" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Temperatur">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="PH Wert" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/pH-Wert">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="PH Range">
+          <OrdinalScaledType>
+            <RequiredMaxValue>14</RequiredMaxValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Leitfähigkeit" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Leitfähigkeit">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Druck" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/Druck" Unit="Bar">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="">
+          <OrdinalScaledType>
+            <RequiredMaxValue>10</RequiredMaxValue>
+            <RequiredValue>7</RequiredValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>QVF Engineering GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="57575616-9022-49de-b830-d159f231589f" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="98da0c1e-357d-43b1-b93e-49ab80dcbc79" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="Endress &amp; Hauser Liquicap M" ID="e28bf873-c200-4717-8f95-0bff68102c76" RefBaseSystemUnitPath="VERA_Sensoren/Endress &amp; Hauser Liquicap M">
+        <ExternalInterface Name="SK_OUT" ID="7f7f64b6-94ff-4f25-bb49-5b892e2e4540" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+        <RoleRequirements RefBaseRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+      </InternalElement>
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Tank/Behälter" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Tank/Vorlagenbehälter" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="Rohr" ID="0f0bd17c-6a4e-4c28-b41e-c2fecc5e8328">
+      <Version>1.0.0</Version>
+      <Attribute Name="Länge" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Länge">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Durchmesser" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Durchmesser" Unit="mm">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="db315c6a-0cf7-4bfd-97dc-ee4f38a60c3c" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="e6affea6-b52e-491e-b886-75e7ea5356f0" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="DruckluftSystem" ID="e73f5c94-aa4b-411b-8970-d966ca6d6989">
+      <Version>1.0.0</Version>
+      <ExternalInterface Name="Druckluft_Eingang" ID="2a4d311a-47f2-484a-a79b-abd00722503b" />
+      <ExternalInterface Name="DL_OUT" ID="7db7169e-0ce9-45b9-b127-37c75410f5d8" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_OUT" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="Produkt_Quelle" ID="07d6ad16-fde6-4996-a73d-ac034bed96bc">
+      <Version>1.0.0</Version>
+      <ExternalInterface Name="Product_OUT" ID="ff4e3172-ed2e-498d-9d48-84fc0a2c1fbb" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Produkt_Quelle" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="Produkt_Senke" ID="21a041fd-878a-45b3-b220-b9c90fa6593b">
+      <Version>1.0.0</Version>
+      <ExternalInterface Name="Product_IN" ID="bdd3c762-b972-4475-85b8-b3e347357f3c" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Produkt_Senke" />
+    </SystemUnitClass>
+  </SystemUnitClassLib>
+  <SystemUnitClassLib Name="VERA_Sensoren">
+    <Version>1.0.0</Version>
+    <SystemUnitClass Name="VEGA EL" ID="028d00ab-96ae-40a6-b217-e3c80a9f28ca">
+      <Version>1.0.0</Version>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>VEGA Grieshaber KG</Value>
+      </Attribute>
+      <ExternalInterface Name="SK_OUT" ID="d5a4d5cb-afb8-475a-b2cc-817978ad7920" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="Endress &amp; Hauser Liquicap M" ID="b9ca5eb1-4f57-45cc-8c49-7722b55b206e">
+      <Version>1.0.0</Version>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>Endress &amp; Hauser Messtechnik GmbH&amp;Co.</Value>
+      </Attribute>
+      <ExternalInterface Name="SK_OUT" ID="d26643c6-2d67-48c2-83a6-ab02b0ce67c4" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="VEGAFLEX" ID="8b9c11da-d91f-4b26-8717-68a0c299e5ee">
+      <Version>1.0.0</Version>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>VEGA Grieshaber KG</Value>
+      </Attribute>
+      <ExternalInterface Name="SK_OUT" ID="3900d1b3-5c8e-4207-8020-e9c8a9abedea" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Sensor/Koninuierlicher Füllstandssensor" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="Wenglor TO" ID="67bc76b5-f3a5-4b74-80e6-dece0f41c008">
+      <Version>1.0.0</Version>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>Wenglor sensoric GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="SD_OUT" ID="2741d8f9-f1be-4b95-b691-edd522dd3266" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_OUT" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Sensor/Diskreter Grenzstandssensor" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="EGA143" ID="a9351769-506c-48c2-8d0c-b3fa8f5836e6">
+      <Version>1.0.0</Version>
+      <Attribute Name="pH-Wert" AttributeDataType="xs:double" RefAttributeType="AttributeTypeLib/pH-Wert">
+        <Version>1.0.0</Version>
+        <DefaultValue>7</DefaultValue>
+        <Constraint Name="PH Range">
+          <OrdinalScaledType>
+            <RequiredMaxValue>14</RequiredMaxValue>
+            <RequiredMinValue>0</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Temperatur" AttributeDataType="xs:int" RefAttributeType="AttributeTypeLib/Temperatur" Unit="°C">
+        <Version>1.0.0</Version>
+        <Constraint Name="">
+          <OrdinalScaledType>
+            <RequiredMaxValue>150</RequiredMaxValue>
+            <RequiredMinValue>-10</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>Sensortechnik Meinsberg GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="Temperatur" ID="4f39038e-d90d-4c33-9566-d5a45799ee17" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+      <ExternalInterface Name="pH" ID="106d3419-6c66-4627-aa2c-ba341b90dade" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Sensor/pH-Sensor" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Sensor/Temperatursensor" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="SPS_Kontroll-Logik" ID="74276955-152e-472f-b7e3-74cbc3e66117">
+      <Version>1.0.0</Version>
+      <Attribute Name="Zustand Diskret" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Diskret">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="SK_IN" ID="e1e1728a-2427-488b-9042-16beca94d671" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_IN" />
+      <ExternalInterface Name="SK_OUT" ID="e553286a-2e44-42bf-b93b-f23efa5fb849" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+      <ExternalInterface Name="SD_IN" ID="079c3e93-e7e9-4901-8d5d-7d46244dca00" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+      <ExternalInterface Name="SD_OUT" ID="219487a6-0ea6-466e-a346-7725d8c928b8" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_OUT" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="Wiederstandsthermometer Typ THR" ID="3a227895-54ae-4280-a30b-07beab379f8a">
+      <Version>1.0.0</Version>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>QVF Engineering GmbH</Value>
+      </Attribute>
+      <Attribute Name="Temperatur" AttributeDataType="xs:int" RefAttributeType="AttributeTypeLib/Temperatur" Unit="°C">
+        <Version>1.0.0</Version>
+        <Constraint Name="">
+          <OrdinalScaledType>
+            <RequiredMaxValue>150</RequiredMaxValue>
+            <RequiredMinValue>-10</RequiredMinValue>
+          </OrdinalScaledType>
+        </Constraint>
+      </Attribute>
+      <ExternalInterface Name="SK_OUT" ID="673c641c-120d-482c-8489-fd398bc46d8d" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Sensor/Temperatursensor" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="Leitfähigkeits-Messzelle LTG/LTC" ID="6e623010-496f-4f04-a4e3-c225842af449">
+      <Version>1.0.0</Version>
+      <Attribute Name="Leitfähigkeit" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Leitfähigkeit">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>Sensortechnik Meinsberg GmbH</Value>
+      </Attribute>
+      <ExternalInterface Name="SK_OUT" ID="7fc2776a-3b2e-4125-bad9-0699b8ca9e90" RefBaseClassPath="InterfaceClassLib/Signal Kontinuierlich/SK_OUT" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Sensor/Leitfähigkeitssensor" />
+    </SystemUnitClass>
+  </SystemUnitClassLib>
+  <SystemUnitClassLib Name="VERA_Aktoren">
+    <Version>1.0.0</Version>
+    <SystemUnitClass Name="Plaromaster" ID="03f18981-c30e-45ea-b920-82d06bea763d">
+      <Version>1.0.0</Version>
+      <InternalElement Name="Asynchronmotor" ID="423e7262-8d7b-4b3d-8dca-997be18d500c">
+        <ExternalInterface Name="SD_IN" ID="6216f9ff-cce6-427c-9c4d-ace872e416d2" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+      </InternalElement>
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Rührwerk" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="SystemUnitClass1" ID="245b777b-42c9-477d-83c0-bdbf46b82d23">
+      <Version>1.0.0</Version>
+    </SystemUnitClass>
+    <SystemUnitClass Name="2/2-Wege-Membranventil" ID="d056e8d5-7753-4d55-a9df-5686ac5756c2">
+      <Version>1.0.0</Version>
+      <Attribute Name="Zustand Diskret" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Diskret">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="DL_IN" ID="534c555f-0133-4a8c-bef2-d7dfc99d5d12" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_IN" />
+      <ExternalInterface Name="Product_IN" ID="fca3450c-f082-41e7-9142-a86e508d4a56" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="b11ac05e-8e94-4ccf-8deb-5bc021522e91" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <InternalElement Name="Regelung" ID="3e4be8d5-1f9c-4c19-afc8-3f6b3d2df222">
+        <ExternalInterface Name="SD_IN" ID="a2f8303f-eed1-4ee2-9385-fb2558d5d883" RefBaseClassPath="InterfaceClassLib/Signal Diskret/SD_IN" />
+      </InternalElement>
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Ventil/Ventil (Diskret)" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="Elektropneumatisches Stellventil Typ 2031K" ID="b2faa850-5df1-46c0-876e-6f29a999c28c">
+      <Version>1.0.0</Version>
+      <Attribute Name="Zustand Koninuierlich" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Koninuierlich">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="DL_IN" ID="433c7ddf-14c1-4bf0-a7ce-d36986eb27e6" RefBaseClassPath="InterfaceClassLib/Druckluft/DL_IN" />
+      <ExternalInterface Name="Product_IN" ID="812dc0d5-88a5-4d75-8c1c-1ec4aa3ac090" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="c55059d2-5dcf-4963-b213-b4d224e7a735" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+      <SupportedRoleClass RefRoleClassPath="RoleClassLib/Ventil/Ventil (Kontinuierlich)" />
+    </SystemUnitClass>
+    <SystemUnitClass Name="Membran-Dosierpumpe TrueDos222D" ID="bb059a0e-2b56-4d24-a065-857235f919eb">
+      <Version>1.0.0</Version>
+      <Attribute Name="Hersteller" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Hersteller">
+        <Version>1.0.0</Version>
+        <Value>ALLDOS Eichler GmbH</Value>
+      </Attribute>
+      <Attribute Name="Zustand Koninuierlich" AttributeDataType="xs:string" RefAttributeType="AttributeTypeLib/Zustand Koninuierlich">
+        <Version>1.0.0</Version>
+      </Attribute>
+      <ExternalInterface Name="Product_IN" ID="9892de96-9dd9-4858-a2e9-55ada0c13512" RefBaseClassPath="InterfaceClassLib/Product/Product_IN" />
+      <ExternalInterface Name="Product_OUT" ID="a43a7b47-4f2a-4454-80f9-68c86bb0a4cf" RefBaseClassPath="InterfaceClassLib/Product/Product_OUT" />
+    </SystemUnitClass>
+  </SystemUnitClassLib>
+  <AttributeTypeLib Name="AttributeTypeLib">
+    <Version>1.0.0</Version>
+    <AttributeType Name="Temperatur" AttributeDataType="xs:int" Unit="°C">
+      <Version>1.0.0</Version>
+      <Constraint Name="">
+        <OrdinalScaledType>
+          <RequiredMaxValue>150</RequiredMaxValue>
+          <RequiredMinValue>-10</RequiredMinValue>
+        </OrdinalScaledType>
+      </Constraint>
+    </AttributeType>
+    <AttributeType Name="Füllstand" AttributeDataType="xs:int" Unit="%">
+      <Version>1.0.0</Version>
+      <Constraint Name="Range">
+        <OrdinalScaledType>
+          <RequiredMaxValue>100</RequiredMaxValue>
+          <RequiredMinValue>0</RequiredMinValue>
+        </OrdinalScaledType>
+      </Constraint>
+    </AttributeType>
+    <AttributeType Name="Durchmesser" AttributeDataType="xs:string" Unit="mm">
+      <Version>1.0.0</Version>
+    </AttributeType>
+    <AttributeType Name="Höhe" AttributeDataType="xs:string" Unit="mm">
+      <Version>1.0.0</Version>
+    </AttributeType>
+    <AttributeType Name="pH-Wert" AttributeDataType="xs:double">
+      <Version>1.0.0</Version>
+      <DefaultValue>7</DefaultValue>
+      <Constraint Name="PH Range">
+        <OrdinalScaledType>
+          <RequiredMaxValue>14</RequiredMaxValue>
+          <RequiredMinValue>0</RequiredMinValue>
+        </OrdinalScaledType>
+      </Constraint>
+    </AttributeType>
+    <AttributeType Name="Leitfähigkeit" AttributeDataType="xs:string">
+      <Version>1.0.0</Version>
+    </AttributeType>
+    <AttributeType Name="Druck" AttributeDataType="xs:double" Unit="Bar">
+      <Version>1.0.0</Version>
+      <DefaultValue>7</DefaultValue>
+      <Constraint Name="">
+        <OrdinalScaledType>
+          <RequiredMaxValue>10</RequiredMaxValue>
+          <RequiredValue>7</RequiredValue>
+          <RequiredMinValue>0</RequiredMinValue>
+        </OrdinalScaledType>
+      </Constraint>
+    </AttributeType>
+    <AttributeType Name="Zustand Diskret" AttributeDataType="xs:string">
+      <Version>1.0.0</Version>
+    </AttributeType>
+    <AttributeType Name="Zustand Koninuierlich" AttributeDataType="xs:string">
+      <Version>1.0.0</Version>
+    </AttributeType>
+    <AttributeType Name="Länge" AttributeDataType="xs:string">
+      <Version>1.0.0</Version>
+    </AttributeType>
+    <AttributeType Name="Hersteller" AttributeDataType="xs:string">
+      <Version>1.0.0</Version>
+    </AttributeType>
+  </AttributeTypeLib>
+</CAEXFile>
